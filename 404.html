@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Context not found</title>
+    </head>
+    <body>
+        <span class="main"></span>
+    </body>
+</html>
+<style>
+    * {
+        background-color: black;
+        color: white;
+        font-family: poppins;
+        font-size: 40px;
+    }
+    .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* background-color: blue; */
+    }
+</style>
+<script>
+    const main = document.querySelector(".main");
+    const msg = "Error 404 Context not found";
+    let cnt = 0;
+    let t = "";
+    setTimeout(() => {
+        const x = setInterval(() => {
+            cnt == msg.length ? clearInterval(x) : (t += msg[cnt++]), (main.innerHTML = t);
+        }, 50);
+    }, 300);
+</script>

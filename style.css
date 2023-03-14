@@ -1,0 +1,92 @@
+* {
+    display: flexbox;
+    padding: 0;
+    margin: 0;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+.header {
+    font-size: 20px;
+    padding-top: 15px;
+    margin-left: 2%;
+    color: gray;
+}
+.content {
+    border: 1px solid rgb(74, 74, 74);
+    overflow-y: scroll;
+    padding: 17px;
+    margin: 2%;
+    margin-top: 1%;
+    margin-bottom: 14px;
+    height: 500px;
+}
+
+.content:empty:not(:focus):before {
+    content: attr(text);
+    opacity: 30%;
+    font-size: 20px;
+}
+button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: gray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 2%;
+    border-radius: 2px;
+    transition: background-color 200ms, transform 200ms;
+}
+button:hover {
+    background-color: rgb(85, 85, 85);
+    transform: translate(0.5px, -1px);
+}
+button:active {
+    transform: translate(0);
+    background-color: rgb(60, 60, 60);
+}
+input {
+    border: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 15px;
+    padding-left: 10px;
+    border-radius: 3px;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    background-color: rgb(200, 200, 200);
+    padding: 5px;
+}
+a {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.search {
+    display: flexbox;
+    right: 0;
+    position: fixed;
+    padding-left: 100px;
+    padding-right: 2%;
+}
+.search button {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 10px;
+    font-size: 13px;
+}
+.exist {
+    color: red;
+    width: 200px;
+    margin-left: 2%;
+    padding-left: 172px;
+    visibility: hidden;
+}

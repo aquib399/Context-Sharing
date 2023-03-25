@@ -45,5 +45,5 @@ function checkDB() {
         } else {
             exist.setAttribute("style", "visibility:visible;");
         }
-    }, 500);
+    }, 100);
 }

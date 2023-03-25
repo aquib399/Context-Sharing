@@ -16,13 +16,12 @@ const type = {
 createBtn.addEventListener("click", async () => {
     type.method = "post";
     type.body = JSON.stringify({ name: name.value, password: pass.value, content: content.innerHTML });
-    if (!(content.innerHTML.length >= 5)) {
+    if (content.innerHTML.length < 5) {
         console.error("Context must have more than 5 letters");
         return;
     }
     try {
         const res = await fetch("/submit", type);
-        const data = await res.json();
         window.location = "./" + name.value;
     } catch (e) {
         alert("Too big content to be uploaded");

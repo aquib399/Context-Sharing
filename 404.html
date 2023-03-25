@@ -7,7 +7,12 @@
         <title>Context not found</title>
     </head>
     <body>
-        <span class="main"></span>
+        <div class="cont">
+            <span style="display: flex; flex-wrap: wrap; align-items: center">
+                <p class="main"></p>
+                <div class="blink"></div>
+            </span>
+        </div>
     </body>
 </html>
 <style>
@@ -15,24 +20,49 @@
         background-color: black;
         color: white;
         font-family: poppins;
-        font-size: 40px;
+        font-size: 22px;
     }
-    .main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* background-color: blue; */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+    }
+    .cont {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .blink {
+        background-color: white;
+        height: 20px;
+        width: 3px;
+        animation: pulse 800ms infinite;
+    }
+    p {
+        display: inline-flex;
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
     }
 </style>
 <script>
     const main = document.querySelector(".main");
     const msg = "Error 404 Context not found";
-    let cnt = 0;
-    let t = "";
-    setTimeout(() => {
-        const x = setInterval(() => {
-            cnt == msg.length ? clearInterval(x) : (t += msg[cnt++]), (main.innerHTML = t);
-        }, 50);
-    }, 300);
+    let cnt = 0,
+        t = "";
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            const x = setInterval(() => {
+                cnt == msg.length ? clearInterval(x) : (t += msg[cnt++]), (main.innerHTML = t);
+            }, 50);
+        }, 1000);
+    });
 </script>

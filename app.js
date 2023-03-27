@@ -4,8 +4,8 @@ const app = express();
 const { MongoClient } = require("mongodb");
 const client = new MongoClient(process.env.URL);
 const db = client.db("ContentSharing").collection("data");
-client.connect();
 let content = "";
+client.connect();
 app.use(express.json({ limit: "10mb" }));
 app.use(express.static(__dirname));
 
@@ -44,4 +44,4 @@ app.route("/find")
         }
         res.send({ status: 404, message: "Not found" });
     });
-app.listen(process.env.PORT, console.log(`Listening at http://localhost:${process.env.PORT}`));
+app.listen(process.env.PORT);

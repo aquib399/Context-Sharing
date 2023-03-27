@@ -1,8 +1,9 @@
 * {
     margin: 0;
-    font-family: poppins;
-    color: gray;
     outline: none;
+}
+body{
+    font-family: poppins;
 }
 .container {
     margin-top: 1%;
@@ -12,6 +13,7 @@
 }
 .header {
     font-size: 20px;
+    color: gray;
 }
 .search {
     margin-left: auto;
@@ -76,6 +78,7 @@ input {
 a {
     margin-right: 5px;
     margin-left: 5px;
+    color: gray;
 }
 
 .exist {
@@ -108,7 +111,7 @@ footer {
     }
     button {
         font-size: 11px;
-        padding: 4px;
+        padding: 6px;
         padding-left: 8px;
         padding-right: 8px;
     }
@@ -130,7 +133,19 @@ footer {
     .header {
         max-width: 170px;
     }
-    .search{
+    .search {
         margin-top: 12px;
+    }
+}
+@media only screen and (max-width: 376px) {
+    input {
+        width: 70px;
+        font-size: 9px;
+    }
+    button {
+        font-size: 9px;
+        padding: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }

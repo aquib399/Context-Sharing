@@ -4,9 +4,7 @@
 }
 button,
 input,
-span {
-    font-family: poppins;
-}
+span,
 body {
     font-family: poppins;
 }
@@ -149,7 +147,7 @@ footer {
     .content {
         margin-left: 2.5%;
     }
-    .header{
+    .header {
         margin-left: 0.5%;
     }
 }

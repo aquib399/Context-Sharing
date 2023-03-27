@@ -41,7 +41,7 @@ body {
     margin: 2%;
     margin-top: 1%;
     margin-bottom: 14px;
-    height: 500px;
+    height: 560px;
     color: black;
 }
 
@@ -108,7 +108,7 @@ footer {
         font-size: 18px;
     }
     .search {
-        margin-top: 7px;
+        margin-top: 15px;
     }
     .search input {
         margin: 0;
@@ -132,20 +132,24 @@ footer {
     .name,
     .password {
         margin: 0;
-        width: 90px;
+        width: 106px;
         font-size: 11px;
     }
     .password {
         margin: 0;
-        width: 130px;
+        width: 125px;
     }
     .submit {
+        margin-left: 3%;
         font-size: 12px;
         padding: 3px;
         padding-left: 6px;
         padding-right: 6px;
     }
     .content {
-        margin: 3%;
+        margin-left: 2.5%;
+    }
+    .header{
+        margin-left: 0.5%;
     }
 }

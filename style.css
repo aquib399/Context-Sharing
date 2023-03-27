@@ -1,14 +1,31 @@
 * {
-    display: flexbox;
-    padding: 0;
     margin: 0;
     font-family: poppins;
+    color: gray;
+    outline: none;
+}
+.container {
+    margin-top: 1%;
+    display: flex;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 .header {
     font-size: 20px;
-    padding-top: 15px;
-    margin-left: 2%;
-    color: gray;
+}
+.search {
+    margin-left: auto;
+}
+.find {
+    margin-left: 10px;
+}
+.search button {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 10px;
+    font-size: 13px;
 }
 .content {
     border: 1px solid rgb(74, 74, 74);
@@ -18,12 +35,13 @@
     margin-top: 1%;
     margin-bottom: 14px;
     height: 500px;
+    color: black;
 }
 
 .content:empty:not(:focus):before {
     content: attr(text);
     opacity: 30%;
-    font-size: 20px;
+    font-size: 18px;
 }
 button {
     border: none;
@@ -54,38 +72,65 @@ input {
     padding-left: 10px;
     border-radius: 3px;
 }
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: black;
-    background-color: rgb(240, 240, 240);
-    padding: 1px;
-}
+
 a {
     margin-right: 5px;
     margin-left: 5px;
 }
-.search {
-    display: flexbox;
-    right: 0;
-    position: fixed;
-    padding-left: 100px;
-    padding-right: 2%;
-}
-.search button {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-left: 10px;
-    font-size: 13px;
-}
+
 .exist {
     color: red;
     width: 200px;
     margin-left: 2%;
     padding-left: 172px;
     visibility: hidden;
+}
+footer {
+    position: fixed;
+    font-size: small;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding-left: 1%;
+}
+
+@media only screen and (max-width: 890px) {
+    .header {
+        font-size: 18px;
+    }
+    input {
+        font-size: 12px;
+        margin: 0;
+        padding: 4px;
+        padding-left: 7px;
+        padding-right: 7px;
+        width: 100px;
+    }
+    button {
+        font-size: 11px;
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .find {
+        padding: 3px;
+    }
+    .password {
+        width: 130px;
+    }
+    .search button {
+        margin: 0;
+        font-size: 12px;
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+@media only screen and (max-width: 422px) {
+    .header {
+        max-width: 170px;
+    }
+    .search{
+        margin-top: 12px;
+    }
 }

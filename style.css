@@ -39,7 +39,7 @@ body {
     margin: 2%;
     margin-top: 1%;
     margin-bottom: 14px;
-    height: 560px;
+    height: 75vh;
     color: black;
 }
 
@@ -85,11 +85,11 @@ a {
 }
 
 .exist {
-    color: red;
-    width: 200px;
-    margin-left: 2%;
-    padding-left: 172px;
-    visibility: hidden;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    /* visibility: hidden; */
 }
 footer {
     position: fixed;

@@ -47,8 +47,4 @@ app.route("/find")
         }
         res.send({ status: 404, message: "Not found" });
     });
-app.listen(process.env.PORT,()=>{
-    for (i = 0; i <= 100000; i++) {
-        console.log(i);
-    }
-});
+app.listen(process.env.PORT);

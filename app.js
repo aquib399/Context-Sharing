@@ -13,9 +13,6 @@ app.get("/", (req, res) => {
     for (i = 0; i <= 100000; i++) {
         console.log(i);
     }
-    for (i = 0; i <= 100000; i++) {
-        console.log(i);
-    }
     res.sendFile(__dirname + "/index.html");
 });
 
@@ -50,4 +47,8 @@ app.route("/find")
         }
         res.send({ status: 404, message: "Not found" });
     });
-app.listen(process.env.PORT);
+app.listen(process.env.PORT,()=>{
+    for (i = 0; i <= 100000; i++) {
+        console.log(i);
+    }
+});

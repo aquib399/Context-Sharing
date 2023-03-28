@@ -6,7 +6,7 @@ const client = new MongoClient(process.env.URL);
 const db = client.db("ContentSharing").collection("data");
 let content = "";
 client.connect();
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json({ limit: "20mb" }));
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {

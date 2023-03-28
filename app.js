@@ -10,6 +10,12 @@ app.use(express.json({ limit: "20mb" }));
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
+    for (i = 0; i <= 100000; i++) {
+        console.log(i);
+    }
+    for (i = 0; i <= 100000; i++) {
+        console.log(i);
+    }
     res.sendFile(__dirname + "/index.html");
 });
 

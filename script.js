@@ -5,9 +5,11 @@ const pass = document.querySelector(".password");
 const find = document.querySelector(".find");
 const findBtn = document.querySelector(".findBtn");
 const exist = document.querySelector(".exist");
-var form = document.getElementById(".form");
-form.addEventListener('submit', (eve)=>{event.preventDefault();} );
+const form1 = document.getElementById(".form1");
+const form2 = document.getElementById(".form2");
 
+form1.addEventListener('submit', (eve)=>{event.preventDefault();} );
+form2.addEventListener('submit', (eve)=>{event.preventDefault();} );
 const type = {
     method: "post",
     headers: {

@@ -8,8 +8,8 @@ const exist = document.querySelector(".exist");
 const form1 = document.getElementById(".form1");
 const form2 = document.getElementById(".form2");
 
-form1.addEventListener('submit', (eve)=>{event.preventDefault();} );
-form2.addEventListener('submit', (eve)=>{event.preventDefault();} );
+form1.addEventListener('submit',findBtn.click());
+form2.addEventListener('submit',createBtn.click());
 const type = {
     method: "post",
     headers: {

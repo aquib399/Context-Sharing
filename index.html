@@ -17,14 +17,14 @@
                 <span>Share context in seconds</span>
             </div>
             <div class="search">
-                <form class="form1">
+                <form class="form1" onsubmit="findBtn.click()">
                     <input type="text" class="find" placeholder="Context name *" required/>
                     <button class="findBtn">Search</button>
                 </form>
             </div>
         </div>
         <div class="content" contenteditable="true" text="Enter or paste your content here . . . . "></div>
-        <form class="form2">
+        <form class="form2"onsubmit="createBtn.click()">
             <button class="submit">Create Context</button>
             <input type="text" class="name" placeholder="Context name *" required/>
             <input type="password" class="password" placeholder="Password (optional)" />

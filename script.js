@@ -5,6 +5,9 @@ const pass = document.querySelector(".password");
 const find = document.querySelector(".find");
 const findBtn = document.querySelector(".findBtn");
 const exist = document.querySelector(".exist");
+var form = document.getElementById(".form");
+form.addEventListener('submit', (eve)=>{event.preventDefault();} );
+
 const type = {
     method: "post",
     headers: {

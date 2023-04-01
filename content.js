@@ -1,20 +1,24 @@
 const output = document.querySelector(".output");
 const title = document.querySelector(".title");
+async function fetchIt(pass) {
+    const res = await fetch("/find", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pass: pass }) });
+    const data = await res.json();
+    return data;
+
+}
 (async () => {
-    while (true) {
-        const pass = prompt("Enter password");
-        if (!pass) {
-            window.location = "./";
-            return;
-        }
-        const res = await fetch("/find", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pass: pass }) });
-        const data = await res.json();
-        if (data.status==401) {
-            alert("Wrong password");
-        }else{
-            break;
+    let res = await fetchIt();
+    title.innerHTML = res.title;
+    if (res.status == 401) {
+        while (true) {
+            const pass = prompt("Enter password");
+            res = await fetchIt(pass);
+            if (res.status == 406) {
+                alert("Wrong password");
+            } else {
+                break;
+            }
         }
     }
-    title.innerHTML = data.title;
-    output.innerHTML = data.content;
+    output.innerHTML = res.content;
 })();

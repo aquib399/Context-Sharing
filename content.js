@@ -6,9 +6,8 @@ const type = {
         "Content-Type": "application/json"
     }
 }
-async function callMe() {
+(async () => {
     const res = await fetch("/find", type);
     const data = await res.json();
     console.log(JSON.stringify(data));
-    
-}
+})();

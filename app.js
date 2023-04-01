@@ -37,7 +37,7 @@ app.get("/:name", async (req, res) => {
 
 app.route("/find")
     .post((req, res) => {
-        if (req.body.pass.length) {
+        if (req.body.pass.length!=undefined) {
             if (content.password == req.body.pass) {
                 res.send({ content: content.content });
                 return;

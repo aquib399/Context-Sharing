@@ -4,7 +4,6 @@ while (true) {
     const pass = prompt("Enter password");
     if (!pass) {
         window.location = "./";
-        return;
     }
     fetch("/find", {
         method: "post",

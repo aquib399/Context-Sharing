@@ -9,7 +9,7 @@ const title = document.querySelector(".title");
         }
         const res = await fetch("/find", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ pass: pass }) });
         const data = await res.json();
-        if (data.status) {
+        if (data.status==401) {
             alert("Wrong password");
         }else{
             break;

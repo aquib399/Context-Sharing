@@ -37,7 +37,11 @@ app.get("/:name", async (req, res) => {
 
 app.route("/find")
     .post((req, res) => {
-        res.send(content);
+        if(req.body.pass==content.password){
+            res.send({content:content.content,title:content.name});
+            return;
+        }
+        res.send({status:401});
     })
     .put(async (req, res) => {
         const result = await db.findOne({ name: req.body.name });

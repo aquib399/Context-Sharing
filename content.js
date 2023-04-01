@@ -6,7 +6,7 @@ async function fetchIt(pass) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ pass: pass });
+        body: JSON.stringify({ pass: pass })
     })
     const data = await res.json();
     return data;

@@ -18,6 +18,7 @@ while (true) {
         }else{
             output.innerHTML = data.content;
             title = data.title;
+            break;
         }
     })
 }

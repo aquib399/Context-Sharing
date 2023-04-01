@@ -11,7 +11,7 @@ async function fetchIt(pass) {
     res.json().then(data => { return data; })
 }
 (async () => {
-    fetchIt().then(res => {
+    fetchIt().then(async(res) => {
         title.innerHTML = res.title;
         if (res.status == 401) {
             while (true) {

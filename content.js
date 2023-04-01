@@ -8,27 +8,26 @@ async function fetchIt(pass) {
         },
         body: JSON.stringify({ pass: pass })
     })
-    const data = await res.json();
-    return data;
-
+    res.json().then(data => { return data; })
 }
 (async () => {
-    let res = await fetchIt();
-    title.innerHTML = res.title;
-    if (res.status == 401) {
-        while (true) {
-            const pass = prompt("Enter password");
-            if (!pass) {
-                window.location = "./";
-                return;
-            }
-            res = await fetchIt(pass);
-            if (res.status == 406) {
-                alert("Wrong password");
-            } else {
-                break;
+    fetchIt().then(res => {
+        title.innerHTML = res.title;
+        if (res.status == 401) {
+            while (true) {
+                const pass = prompt("Enter password");
+                if (!pass) {
+                    window.location = "./";
+                    return;
+                }
+                res = await fetchIt(pass);
+                if (res.status == 406) {
+                    alert("Wrong password");
+                } else {
+                    break;
+                }
             }
         }
-    }
-    output.innerHTML = res.content;
+        output.innerHTML = res.content;
+    });
 })();

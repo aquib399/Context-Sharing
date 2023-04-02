@@ -10,6 +10,7 @@
         <title class="title"></title>
         <style>
             .output {
+                font-family:poppins;
                 border: 1px solid rgb(74, 74, 74);
                 padding: 15px;
                 margin: 0.5%;
@@ -17,13 +18,21 @@
                 margin-bottom: 14px;
                 overflow-y: auto;
             }
+            span{
+                font-size: 20px;
+                font-family: poppins;
+                color: rgb(100, 100, 100);
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
         </style>
     </head>
     <body>
         <center>
-            <span style="font-size: 20px; font-family: poppins; color: rgb(100, 100, 100)"> Context sharing </span>
+            <span> Context sharing </span>
         </center>
-        <div class="output" contenteditable="true"></div>
+        <div class="output"></div>
     </body>
 </html>
 <script src="./content.js"></script>

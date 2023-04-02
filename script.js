@@ -5,6 +5,7 @@ const pass = document.querySelector(".password");
 const find = document.querySelector(".find");
 const findBtn = document.querySelector(".findBtn");
 const exist = document.querySelector(".exist");
+
 const type = {
     method: "post",
     headers: {

@@ -42,9 +42,9 @@ app.route("/find")
     .put(async (req, res) => {
         const result = await db.findOne({ name: req.body.name });
         if (result) {
-            res.send(result);
+            res.send({ status: 302 });
             return;
         }
-        res.send({ status: 404, message: "Not found" });
+        res.send({ status: 404 });
     });
 app.listen(process.env.PORT);

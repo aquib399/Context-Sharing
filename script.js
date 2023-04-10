@@ -35,16 +35,14 @@ findBtn.addEventListener("click", async () => {
 
 name.addEventListener("input", checkDB);
 
-function checkDB() {
+async function checkDB() {
     type.method = "put";
     type.body = JSON.stringify({ name: name.value });
-    setTimeout(async () => {
-        const res = await fetch("/find", type);
-        const data = await res.json();
-        if (data.status) {
-            exist.setAttribute("style", "visibility:hidden;");
-        } else {
-            exist.setAttribute("style", "visibility:visible;");
-        }
-    }, 100);
+    const res = await fetch("/find", type);
+    const data = await res.json();
+    if (data.status == 404) {
+        exist.setAttribute("style", "visibility:hidden;");
+        return;
+    }
+    exist.setAttribute("style", "visibility:visible;");
 }

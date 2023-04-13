@@ -152,3 +152,55 @@ footer {
         margin-left: 0.5%;
     }
 }
+
+@media only screen and (max-width: 385px) {
+    .header {
+        max-width: 140px;
+        font-size: 15px;
+    }
+    .name,
+    .password {
+        margin: 0;
+        width: 80px;
+        font-size: 9px;
+    }
+    .password {
+        margin: 0;
+        width: 100px;
+    }
+    .submit {
+        margin-left: 3%;
+        font-size: 11.5px;
+        padding: 2px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .search button {
+        font-size: 10px;
+        padding-left: 4;
+        padding-right: 4;
+    }
+    .search input {
+        margin: 0;
+        font-size: 10px;
+        width: 75px;
+        padding: 7px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}
+@media only screen and (max-width: 325px) {
+    .name,
+    .password {
+        margin: 0;
+        width: 70px;
+        font-size: 8px;
+    }
+    .password {
+        margin: 0;
+        width: 90px;
+    }
+    .submit{
+        font-size: 10.5px;
+    }
+}

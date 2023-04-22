@@ -1,6 +1,6 @@
 const content = document.querySelector(".content");
 const createBtn = document.querySelector(".submit");
-const name = document.querySelector(".name");
+const Name = document.querySelector(".name");
 const pass = document.querySelector(".password");
 const find = document.querySelector(".find");
 const findBtn = document.querySelector(".findBtn");
@@ -16,14 +16,14 @@ const type = {
 
 createBtn.addEventListener("click", async () => {
     type.method = "post";
-    type.body = JSON.stringify({ name: name.value, password: pass.value, content: content.innerHTML });
+    type.body = JSON.stringify({ name: Name.value, password: pass.value, content: content.innerHTML });
     if (content.innerHTML.length < 5) {
         console.error("Context must have more than 5 letters");
         return;
     }
     try {
         const res = await fetch("/submit", type);
-        window.location = "./" + name.value;
+        window.location = "./" + Name.value;
     } catch (e) {
         alert("Too big content to be uploaded");
     }
@@ -33,11 +33,11 @@ findBtn.addEventListener("click", async () => {
     window.location = "./" + find.value;
 });
 
-name.addEventListener("input", checkDB);
+Name.addEventListener("input", checkDB);
 
 async function checkDB() {
     type.method = "put";
-    type.body = JSON.stringify({ name: name.value });
+    type.body = JSON.stringify({ name: Name.value });
     const res = await fetch("/find", type);
     const data = await res.json();
     if (data.status == 404) {

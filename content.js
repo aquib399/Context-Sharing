@@ -1,5 +1,5 @@
-const output = document.querySelector(".output");
-const title = document.querySelector(".title");
+const output = document.querySelector(".__output__");
+const title = document.querySelector(".__title__");
 fetch("/find", { method: "post" })
     .then((res) => res.json())
     .then((data) => {

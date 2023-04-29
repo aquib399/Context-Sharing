@@ -4,9 +4,16 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title class="title"></title>
+        <title class="__title__"></title>
         <style>
-            .output {
+            .__heading__ {
+                font-size: 20px;
+                color: rgb(100, 100, 100);
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .__output__ {
                 border: 1px solid rgb(74, 74, 74);
                 padding: 15px;
                 margin: 0.5%;
@@ -14,20 +21,13 @@
                 margin-bottom: 14px;
                 overflow-y: auto;
             }
-            span {
-                font-size: 20px;
-                color: rgb(100, 100, 100);
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
         </style>
     </head>
     <body>
         <center>
-            <span> Context sharing </span>
+            <span class="__heading__"> Context sharing </span>
         </center>
-        <div class="output"></div>
+        <div class="__output__"></div>
     </body>
 </html>
 <script src="./content.js"></script>

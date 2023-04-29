@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
     margin: 0;
     outline: none;
@@ -200,7 +201,7 @@ footer {
         margin: 0;
         width: 90px;
     }
-    .submit{
+    .submit {
         font-size: 10.5px;
     }
 }

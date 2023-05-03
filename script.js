@@ -15,6 +15,9 @@ const type = {
 };
 
 createBtn.addEventListener("click", async () => {
+    if (!checkDB()) {
+        return;
+    }
     type.method = "post";
     type.body = JSON.stringify({ name: Name.value, password: pass.value, content: content.innerHTML });
     if (content.innerHTML.length < 5) {
@@ -23,6 +26,10 @@ createBtn.addEventListener("click", async () => {
     }
     try {
         const res = await fetch("/submit", type);
+        const data = await res.json();
+        if (data.status == 302) {
+            return;
+        }
         window.location = "./" + Name.value;
     } catch (e) {
         alert("Too big content to be uploaded");
@@ -42,7 +49,10 @@ async function checkDB() {
     const data = await res.json();
     if (data.status == 404) {
         exist.setAttribute("style", "visibility:hidden;");
-        return;
+        createBtn.disabled = false;
+        return true;
     }
     exist.setAttribute("style", "visibility:visible;");
+    createBtn.disabled = true;
+    return false;
 }

@@ -15,7 +15,12 @@ app.get("/", (req, res) => {
 
 app.post("/submit", async (req, res) => {
     try {
-        const result = await db.insertOne(req.body);
+        let result = await db.findOne({ name: req.body.name });
+        if (result) {
+            res.send({ status: 302 });
+            return;
+        }
+        result = await db.insertOne(req.body);
         res.send(result);
     } catch (e) {
         res.send({ code: 503, status: e });

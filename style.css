@@ -42,6 +42,7 @@ span {
     margin-bottom: 14px;
     height: 67vh;
     color: black;
+    font-family: poppins;
 }
 
 .content:empty:not(:focus):before {

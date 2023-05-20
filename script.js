@@ -1,10 +1,34 @@
 const content = document.querySelector(".content");
-const createBtn = document.querySelector(".submit");
 const Name = document.querySelector(".name");
 const pass = document.querySelector(".password");
 const find = document.querySelector(".find");
-const findBtn = document.querySelector(".findBtn");
+const createBtn = document.querySelector(".submit");
 const exist = document.querySelector(".exist");
+document.querySelector(".form1").addEventListener("submit", (e) => e.preventDefault());
+document.querySelector(".form2").addEventListener("submit", (e) => e.preventDefault());
+function search() {
+    window.location = "./" + find.value;
+}
+async function create() {
+    if (content.innerHTML.length < 5) {
+        console.error("Context must have more than 5 letters");
+        return;
+    }
+    if (!checkDB()) return;
+    type.method = "post";
+    type.body = JSON.stringify({ name: Name.value, password: pass.value, content: content.innerHTML });
+    createBtn.disabled = true;
+    try {
+        const res = await fetch("/submit", type);
+        const data = await res.json();
+        if (data.status == 302) return;
+        window.location = "./" + Name.value;
+    } catch (e) {
+        createBtn.disabled = false;
+        alert("Too big content to be uploaded");
+    }
+}
+Name.addEventListener("input", checkDB);
 
 const type = {
     method: "post",
@@ -13,35 +37,6 @@ const type = {
     },
     body: 0,
 };
-
-createBtn.addEventListener("click", async () => {
-    if (!checkDB()) {
-        return;
-    }
-    type.method = "post";
-    type.body = JSON.stringify({ name: Name.value, password: pass.value, content: content.innerHTML });
-    if (content.innerHTML.length < 5) {
-        console.error("Context must have more than 5 letters");
-        return;
-    }
-    try {
-        const res = await fetch("/submit", type);
-        const data = await res.json();
-        if (data.status == 302) {
-            return;
-        }
-        window.location = "./" + Name.value;
-    } catch (e) {
-        alert("Too big content to be uploaded");
-    }
-});
-
-findBtn.addEventListener("click", async () => {
-    window.location = "./" + find.value;
-});
-
-Name.addEventListener("input", checkDB);
-
 async function checkDB() {
     type.method = "put";
     type.body = JSON.stringify({ name: Name.value });

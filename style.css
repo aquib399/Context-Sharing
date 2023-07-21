@@ -3,6 +3,9 @@
     margin: 0;
     outline: none;
 }
+body,input{
+    background-color: rgb(240,240,240)
+}
 .exist,
 button,
 input,
@@ -17,7 +20,7 @@ span {
 }
 .header {
     font-size: 20px;
-    color: gray;
+    color:rgb(100, 100, 100);
 }
 .search {
     margin-left: auto;
@@ -54,7 +57,7 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-    background-color: gray;
+    background-color:rgb(100, 100, 100);
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 25px;
@@ -83,7 +86,7 @@ input {
 a {
     margin-right: 5px;
     margin-left: 5px;
-    color: gray;
+    color:rgb(100, 100, 100);
 }
 
 .exist {
@@ -99,7 +102,7 @@ footer {
     font-size: small;
     bottom: 0;
     width: 100%;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(230, 230, 230);
     padding-left: 1%;
 }
 

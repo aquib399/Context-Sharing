@@ -1,0 +1,1 @@
+Free context sharing app that allows to share rich text with simple clicks

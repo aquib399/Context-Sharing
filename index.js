@@ -51,3 +51,4 @@ app
     res.send({ status: 404 });
   });
 app.listen(process.env.PORT);
+module.exports = app

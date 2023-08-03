@@ -10,7 +10,7 @@ app.use(express.json({ limit: "20mb" }));
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/home.html");
+  res.sendFile(__dirname + "/src/home.html");
 });
 
 app.post("/submit", async (req, res) => {
@@ -31,10 +31,10 @@ app.get("/:name", async (req, res) => {
   const result = await db.findOne({ name: req.params.name });
   if (result) {
     content = result;
-    res.sendFile(__dirname + "/content.html");
+    res.sendFile(__dirname + "/src/content.html");
     return;
   }
-  res.sendFile(__dirname + "/404.html");
+  res.sendFile(__dirname + "/src/404.html");
 });
 
 app

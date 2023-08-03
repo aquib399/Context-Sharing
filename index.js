@@ -10,7 +10,7 @@ app.use(express.json({ limit: "20mb" }));
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/home.html");
 });
 
 app.post("/submit", async (req, res) => {

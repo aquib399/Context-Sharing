@@ -2,7 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const { MongoClient } = require("mongodb");
-const client = new MongoClient(process.env.URl);
+const url = process.env.URl;
+const client = new MongoClient(url);
 const db = client.db("ContentSharing").collection("data");
 let content = "";
 client.connect();
@@ -50,4 +51,4 @@ app
     }
     res.send({ status: 404 });
   });
-app.listen(process.env.PORT);
+app.listen(3000);

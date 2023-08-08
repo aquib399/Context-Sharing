@@ -15,5 +15,6 @@
     "mongodb": "^5.7.0",
     "nodemon": "^2.0.22"
   },
-  "description": "A simple context sharing web application"
+  "description": "A simple context sharing web application",
+  "devDependencies": {}
 }

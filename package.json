@@ -1,23 +1,16 @@
 {
   "name": "context-sharing",
   "version": "1.0.0",
+  "description": "Free context sharing app that allows to share rich text with simple clicks",
   "main": "index.js",
-  "engines": {
-    "node": ">=14.20.1"
-  },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
-  "author": "Aquib",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongodb": "^5.7.0",
-    "nodemon": "^2.0.22"
-  },
-  "description": "A simple context sharing web application",
-  "devDependencies": {}
+    "mongodb": "^5.7.0"
+  }
 }

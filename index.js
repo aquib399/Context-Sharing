@@ -39,7 +39,8 @@ app.get("/:name", async (req, res) => {
 
 app
   .route("/find")
-  .post((req, res) => {
+  .post(async (req, res) => {
+    const content = await db.findOne({ name: req.body.name });
     res.send(content);
   })
   .put(async (req, res) => {

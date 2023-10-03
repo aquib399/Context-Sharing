@@ -22,4 +22,4 @@ fetch("/find", {
       }
     }
     document.querySelector(".__output__").innerHTML = data.content;
-  });
+  }).catch(err=>alert("Try again"));
